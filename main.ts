@@ -66,7 +66,7 @@ const ws = XLSX.utils.aoa_to_sheet([
 ]);
 
 const wb = XLSX.utils.book_new();
-XLSX.utils.book_append_sheet(wb, ws, 'Translations');
+XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
 
 // 输出路径
 const outputFilePath = path.resolve(langDir, `${appName}_术语库_${originalLang}_${targetLang}.xlsx`);
