@@ -51,7 +51,7 @@ const data = Object.keys(flatOriginal).map((key) => {
   return [
     /* key, */
     originalValue,
-    targetLang,
+    targetLang.replace('-', '_'),
     translatedValue,
     isTranslated ? '是' : '否',
   ];
@@ -69,7 +69,7 @@ const wb = XLSX.utils.book_new();
 XLSX.utils.book_append_sheet(wb, ws, 'Translations');
 
 // 输出路径
-const outputFilePath = path.resolve(langDir, `${appName}_术语库_zh-CN_en-US.xlsx`);
+const outputFilePath = path.resolve(langDir, `${appName}_术语库_${originalLang}_${targetLang}.xlsx`);
 
 // 检查文件是否存在
 if (fs.existsSync(outputFilePath)) {
