@@ -17,7 +17,12 @@
 ### 1.整理多语言文件夹 （应用名称->多语言文件）
 整理自己应用的多语言文件夹 放置在langs文件夹下 目录结构参考：langs下的Dashboard文件夹
 请确保项目中存在如下结构的语言文件：
-langs/ └── <appName>/ ├── <originalLang>.ts └── <targetLang>.ts
+```
+langs/ 
+└── <appName>/ 
+    ├── <originalLang>.ts 
+    └── <targetLang>.ts
+```
 
 ### 2.安装依赖
 
@@ -76,10 +81,20 @@ ts-node main.ts Dashboard en-US zh-TW
 - **默认语言格式使用下划线**：工具中默认使用的语言代码是 `zh-CN` 和 `en-US`，请确保语言文件名与之匹配。
 - **语言文件需为 default 导出**：每个语言 `.ts` 文件必须使用 `export default` 导出翻译对象。
 - **文件结构要求**：请确保项目中存在如下结构的语言文件：
-langs/ └── <appName>/ ├── <originalLang>.ts └── <targetLang>.ts
+```
+langs/ 
+└── <appName>/ 
+    ├── <originalLang>.ts 
+    └── <targetLang>.ts
+```
 
 示例：
-langs/ └── Dashboard/ ├── zh-CN.ts └── en-US.ts
+```
+langs/
+└── Dashboard/
+    ├── zh-CN.ts
+    └── en-US.ts
+```
 
 
 - **输出路径固定格式**：生成的 Excel 文件会保存在 `langs/<appName>/` 目录下，文件名为 `<appName>_术语库_originalLang_targetLang.xlsx`。
